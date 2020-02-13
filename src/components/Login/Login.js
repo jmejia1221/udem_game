@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import fire from '../../config/fire';
+
+import Signin from '../Signin/Signin';
 
 // CSS
 import LoginStyle from './Login.css';
 
-class Login extends React.Component {
+class Login extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            changeForm: false
+        }
+
+        this.toggleForm = this.toggleForm.bind(this);
+    }
 
     login() {
         const email = document.querySelector("#email").value;
@@ -19,35 +31,34 @@ class Login extends React.Component {
             })
     }
 
-    logout() {
-        const email = document.querySelector("#email").value;
-        const password = document.querySelector("#password").value;
-
-        fire.auth().createUserWithEmailAndPassword(email, password)
-            .then((u) => {
-                console.log('Successfully Signed up');
-            })
-            .catch((err) => {
-                console.log('Error: ', err.toString());
-            })
-
+    toggleForm() {
+        this.setState(state => ({
+            changeForm: !state.changeForm
+        }))
     }
 
     render() {
-        return (
-            <div>
+        const changeForm = this.state.changeForm;
+        if (changeForm) {
+            return (
+                <Signin handleForm={this.toggleForm} />
+            )
+        } else {
+            return (
                 <div>
-                    <div>Email</div>
-                    <input id="email" placeholder="Enter Email.." type="email" />
+                    <div>
+                        <div>Email</div>
+                        <input id="email" placeholder="Enter Email.." type="email" />
+                    </div>
+                    <div>
+                        <div>Password</div>
+                        <input id="password" placeholder="Enter Password" type="password" />
+                    </div>
+                    <button onClick={this.login}>Login</button>
+                    <button onClick={this.toggleForm}>Sign Up</button>
                 </div>
-                <div>
-                    <div>Password</div>
-                    <input id="password" placeholder="Enter Password" type="password" />
-                </div>
-                <button onClick={this.login}>Login</button>
-                <button onClick={this.logout}>Sign Up</button>
-            </div>
-        )
+            )
+        }
     }
 }
 

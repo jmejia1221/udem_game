@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Login from './components/Login/Login';
 import Home from './Containers/Home';
 import fire from './config/fire';
@@ -6,7 +6,7 @@ import fire from './config/fire';
 // CSS
 import './App.css';
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
 

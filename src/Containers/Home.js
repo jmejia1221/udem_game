@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import fire from '../config/fire';
 
 
-class Home extends React.Component {
+class Home extends Component {
 
     logout() {
         fire.auth().signOut();
