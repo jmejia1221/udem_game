@@ -1,0 +1,30 @@
+.Login {
+    padding: 0 10px 0 50px;
+}
+.Login input {
+    width: 100%;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.Login .enterButton {
+    border: 0;
+    height: 30px;
+    font-size: 1.2em;
+    line-height: 10px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    background: #14214b;
+    color: #fff;
+    width: 80%;
+    border-radius: 5px;
+}
+.Login .signUp {
+    width: 90%;
+    margin-top: 10px;
+}
+.Login .signUp a {
+    color: #386D98;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}

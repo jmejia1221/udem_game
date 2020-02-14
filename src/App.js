@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Login from './components/Login/Login';
+import LoginContainer from './Containers/LoginContainer';
 import Home from './Containers/Home';
 import fire from './config/fire';
 
@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.user ? (<Home />) : (<Login />)}
+        {this.state.user ? (<Home />) : (<LoginContainer />)}
       </div>
     );
   }

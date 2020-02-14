@@ -22,7 +22,6 @@ class Signin extends Component {
             .catch((err) => {
                 console.log('Error: ', err.toString());
             })
-
     }
 
     render() {
@@ -42,7 +41,7 @@ class Signin extends Component {
                     <input id="signinPassword" placeholder="Enter Password" type="password" />
                 </div>
                 <button onClick={this.changeForm}>Login</button>
-                <button onClick={this.signIn}>Sign Up</button>
+                <button onClick={this.signIn}>Sign In</button>
             </div>
         )
     }

@@ -1,0 +1,74 @@
+.LoginContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.LoginContainer .title {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #333;
+    padding: 0 0 0 50px;
+    text-transform: uppercase;
+}
+.LoginContainer .title strong {
+    font-weight: 700;
+    display: block;
+}
+.LoginContainer .content {
+    width: 250px;
+    height: 230px;
+    position: relative;
+}
+.LoginContainer .bg-triangle,
+.LoginContainer .form {
+    position: absolute;
+}
+.LoginContainer .bg-triangle {
+    width: 0;
+    height: 0;
+    top: calc(50% - 20em);
+    left: calc(50% - 8em);
+    border-top: 20em solid transparent;
+    border-bottom: 20em solid transparent;
+    border-left: 25em solid #d2d2d2;
+    z-index: 3;
+    opacity: 0.2;
+}
+.LoginContainer .bg-triangle-full {
+    opacity: 1;
+    top: calc(50% - 17.5em);
+    left: calc(50% - 7em);
+    border-top: 17.5em solid transparent;
+    border-bottom: 17.5em solid transparent;
+    border-left: 22em solid #fff;
+    z-index: 4;
+}
+.LoginContainer .bg-triangle-lightblue {
+    opacity: 1;
+    top: calc(50% - 0em);
+    left: calc(50% - 6em);
+    border-top: 6em solid transparent;
+    border-bottom: 14em solid transparent;
+    border-right: 15em solid #386D98;
+    border-left: 0;
+    z-index: 2;
+    overflow: hidden;
+}
+/* .LoginContainer .bg-triangle-lightblue:before {
+    content: '';
+    background: linear-gradient(-90deg, #386D98, #14214b);
+} */
+.LoginContainer .bg-triangle-darkblue {
+    opacity: 1;
+    top: calc(50% - 1em);
+    left: calc(50% - 3em);
+    border-top: 6em solid transparent;
+    border-bottom: 14em solid transparent;
+    border-right: 14em solid #14214b;
+    border-left: 0;
+    z-index: 1;
+}
+.LoginContainer .form {
+    z-index: 10;
+}

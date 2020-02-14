@@ -11,11 +11,7 @@ class Login extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            changeForm: false
-        }
-
-        this.toggleForm = this.toggleForm.bind(this);
+        this.changeForm = props.handleForm;
     }
 
     login() {
@@ -31,34 +27,21 @@ class Login extends Component {
             })
     }
 
-    toggleForm() {
-        this.setState(state => ({
-            changeForm: !state.changeForm
-        }))
-    }
-
     render() {
-        const changeForm = this.state.changeForm;
-        if (changeForm) {
-            return (
-                <Signin handleForm={this.toggleForm} />
-            )
-        } else {
-            return (
+        return (
+            <div className="Login">
                 <div>
-                    <div>
-                        <div>Email</div>
-                        <input id="email" placeholder="Enter Email.." type="email" />
-                    </div>
-                    <div>
-                        <div>Password</div>
-                        <input id="password" placeholder="Enter Password" type="password" />
-                    </div>
-                    <button onClick={this.login}>Login</button>
-                    <button onClick={this.toggleForm}>Sign Up</button>
+                    <input id="email" placeholder="LOGIN..." type="email" />
                 </div>
-            )
-        }
+                <div>
+                    <input id="password" placeholder="PASSWORD..." type="password" />
+                </div>
+                <button className="enterButton" onClick={this.login}>Enter</button>
+                <div className="signUp">
+                    <a className="signUp" onClick={this.changeForm}>Sign Up</a>
+                </div>
+            </div>
+        )
     }
 }
 
