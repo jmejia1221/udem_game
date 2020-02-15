@@ -72,3 +72,6 @@
 .LoginContainer .form {
     z-index: 10;
 }
+.LoginContainer .formSign {
+    top: -20px;
+}

@@ -38,8 +38,11 @@ class LoginContainer extends Component {
                     <span className="bg-triangle bg-triangle-full"></span>
                     <span className="bg-triangle bg-triangle-lightblue"></span>
                     <span className="bg-triangle  bg-triangle-darkblue"></span>
-                    <div className="form">
-                        <h1 className="title"><span>Log into</span><strong>Udem game</strong></h1>
+                    <div className={`${ changeForm ? 'formSign' : ''} form`}>
+                        <h1 className="title">
+                            <span>{ changeForm ? 'Sign into' : 'Log into'}</span>
+                            <strong>Udem game</strong>
+                        </h1>
                         {form}
                     </div>
                 </div>

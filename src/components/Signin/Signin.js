@@ -26,22 +26,20 @@ class Signin extends Component {
 
     render() {
         return(
-            <div>
-                Signing
+            <div className="SignIn">
                 <div>
-                    <div>Name</div>
-                    <input id="name" placeholder="Enter Name.." type="text" />
+                    <input id="name" placeholder="NAME..." type="text" />
                 </div>
                 <div>
-                    <div>Email</div>
-                    <input id="signinEmail" placeholder="Enter Email.." type="email" />
+                    <input id="signinEmail" placeholder="EMAIL..." type="email" />
                 </div>
                 <div>
-                    <div>Password</div>
-                    <input id="signinPassword" placeholder="Enter Password" type="password" />
+                    <input id="signinPassword" placeholder="PASSWORD..." type="password" />
                 </div>
-                <button onClick={this.changeForm}>Login</button>
-                <button onClick={this.signIn}>Sign In</button>
+                <button className="enterButton" onClick={this.signIn}>Sign In</button>
+                <div className="login">
+                    <a onClick={this.changeForm}>Login</a>
+                </div>
             </div>
         )
     }
