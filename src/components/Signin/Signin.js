@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import fire from '../../config/fire';
 
 // CSS
-import SigningStyle from  './Signing.css';
+import './Signing.css';
 
 class Signin extends Component {
 
@@ -12,12 +12,16 @@ class Signin extends Component {
     }
 
     signIn() {
+        const name = document.querySelector("#name").value;
         const email = document.querySelector("#signinEmail").value;
         const password = document.querySelector("#signinPassword").value;
 
         fire.auth().createUserWithEmailAndPassword(email, password)
             .then((u) => {
                 console.log('Successfully Signed up');
+                fire.auth().currentUser.updateProfile({
+                    displayName: name
+                })
             })
             .catch((err) => {
                 console.log('Error: ', err.toString());
@@ -38,7 +42,7 @@ class Signin extends Component {
                 </div>
                 <button className="enterButton" onClick={this.signIn}>Sign In</button>
                 <div className="login">
-                    <a onClick={this.changeForm}>Login</a>
+                    <a href="#" onClick={this.changeForm}>Login</a>
                 </div>
             </div>
         )

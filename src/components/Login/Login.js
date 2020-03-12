@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import fire from '../../config/fire';
 
-import Signin from '../Signin/Signin';
-
 // CSS
-import LoginStyle from './Login.css';
+import './Login.css';
 
 class Login extends Component {
 
@@ -38,7 +36,7 @@ class Login extends Component {
                 </div>
                 <button className="enterButton" onClick={this.login}>Enter</button>
                 <div className="signUp">
-                    <a className="signUp" onClick={this.changeForm}>Sign Up</a>
+                    <a href="#" className="signUp" onClick={this.changeForm}>Sign Up</a>
                 </div>
             </div>
         )
