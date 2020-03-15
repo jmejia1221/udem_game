@@ -1,0 +1,51 @@
+@import '../variables.scss'; 
+
+.wrapper {
+    height: 100vh;
+    padding: 20px;
+    background: $bg-color;
+}
+.header {
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    .logo {
+        color: $white;
+        h1 {
+            font-weight: 300;
+        }
+        .udem {
+            font-weight: 700;
+            color: $udem-color;
+        }
+    }
+    .logout {
+        color: $white;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 700;
+    }
+    .logout-icon {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        border-radius: 50%;
+        background: $udem-color;
+        position: relative;
+        margin-right: 5px;
+        vertical-align: middle;
+        &:after {
+            content: '';
+            position: absolute;
+            background: $bg-color;
+            width: 16px;
+            height: 16px;
+            top: calc(50% - 8px);
+            left: calc(50% - 8px);
+            display: inline-block;
+            border-radius: 50%;
+        }
+    }
+}
