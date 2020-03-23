@@ -3,7 +3,22 @@
 .wrapper {
     height: 100vh;
     padding: 20px;
-    background: $bg-color;
+    background: url(../images/bg.jpg);
+    background-position: 100%;
+    background-size: cover;
+    position: relative;
+    &:before {
+        content: '';
+        background: rgba(14,2,26,.7);
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 }
 .header {
     display: flex;
@@ -11,6 +26,8 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
     .logo {
         color: $white;
         h1 {

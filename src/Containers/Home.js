@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import fire from '../config/fire';
+
 import Card from '../components/Cards/Card';
 import CartLine from '../components/Cards/CardLine';
+
+import BoardContainer from '../components/Board/BoardContainer';
+import Board from '../components/Board/Board';
+import TextEditor from '../components/Board/TextEditor';
 
 // css
 import './Home.scss';
@@ -29,6 +34,10 @@ class Home extends Component {
                     <Card></Card>
                     <Card></Card>
                 </CartLine>
+                <BoardContainer>
+                    <Board />
+                    <TextEditor />
+                </BoardContainer>
             </div>
         )
     }
