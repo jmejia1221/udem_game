@@ -49,6 +49,7 @@
 // Text Editor
 .TextEditor {
     width: 70%;
+    min-width: 370px;
     color: #fff;
     margin-left: 20px;
     background: rgba(7, 25, 46, .7);
@@ -65,5 +66,6 @@
         border-bottom-right-radius: 15px;
         position: absolute;
         bottom: 0;
+        cursor: pointer;
     }
 }
