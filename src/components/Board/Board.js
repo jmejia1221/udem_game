@@ -6,6 +6,7 @@ class Board extends Component {
             <div className="Board">
                 <div className="groupPlanets">
                     <ul className="listPlanets">
+                        <span className="ship"></span>
                         <li>
                             <span className="horizontalLine"></span>
                         </li>

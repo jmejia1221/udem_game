@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
+
+import Board from '../Board/Board';
+import TextEditor from '../Board/TextEditor';
 
 // css
 import './Board.scss';
 
-const BoardContainer = (props) => {
-    return(
-        <div className="BoardContainer">
-            {props.children}
-        </div>
-    )
+class MainBoard extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return(
+            <div className="MainBoard">
+                <Board />
+                <TextEditor />
+            </div>
+        )
+    }
 }
 
 
-export default BoardContainer;
+export default MainBoard;
