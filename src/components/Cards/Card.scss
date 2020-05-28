@@ -22,6 +22,10 @@ $triangle-large: 20px;
     background: linear-gradient(135deg, rgba(62,16,78, .8) 0%, rgba(27,4,56,.8) 100%);
     opacity: .5;
     position: relative;
+    .content {
+        position: relative;
+        height: 100%;
+    }
     .planet {
         width: 100px;
         height: 100px;

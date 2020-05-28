@@ -8,9 +8,16 @@ import BoardContainer from '../components/Board/BoardContainer';
 import Board from '../components/Board/Board';
 import TextEditor from '../components/Board/TextEditor';
 
+import ConstData from '../constData';
+
 // css
 import './Home.scss';
 class Home extends Component {
+
+    constructor(props) {
+        super(props);
+        console.log(ConstData)
+    }
 
     logout() {
         fire.auth().signOut();
@@ -29,10 +36,21 @@ class Home extends Component {
                     </span>
                 </header>
                 <CartLine>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
+                    {ConstData.map((obj, i) => {
+                        return (<Card key={i} canUseModal={true}>
+                            <div>
+                                <h1>{obj.title}</h1>
+                                <h4>{obj.description}</h4>
+                                <ul>
+                                    {obj.options.map((option, i) => {
+                                        return (
+                                            <li key={i}>{option.title}</li>
+                                        )
+                                    })}
+                                </ul>
+                            </div>
+                        </Card>) 
+                    })}
                 </CartLine>
                 <BoardContainer>
                     <Board />
