@@ -23,6 +23,7 @@
     height: 50px;
     top: 55px;
     position: absolute;
+    transition: all 1s;
 }
 .listPlanets {
     list-style: none;
@@ -64,6 +65,11 @@
     padding-bottom: 50px;
     position: relative;
     border-radius: 15px;
+    .content {
+        max-height: 364px;
+        overflow: hidden;
+        overflow-y: auto;
+    }
     .runButton {
         background: rgba(7, 25, 46, 1);
         width: 100%;
@@ -92,4 +98,16 @@
 }
 .editor {
     width: 100%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    height: 34px;
+    padding: 7px 10px;
+    box-sizing: border-box;
+}
+.listFunctions {
+    width: 100%;
+    .function {
+        padding: 10px;
+    }
 }

@@ -4,9 +4,7 @@ import fire from '../config/fire';
 import Card from '../components/Cards/Card';
 import CartLine from '../components/Cards/CardLine';
 
-import BoardContainer from '../components/Board/BoardContainer';
-import Board from '../components/Board/Board';
-import TextEditor from '../components/Board/TextEditor';
+import MainBoard from '../components/Board/BoardContainer';
 
 import ConstData from '../constData';
 
@@ -16,7 +14,20 @@ class Home extends Component {
 
     constructor(props) {
         super(props);
+
+        this.database = fire.database().ref().child('options');
+        this.state = {
+            options: 0
+        }
         console.log(ConstData)
+    }
+
+    componentDidMount() {
+        this.database.on('value', snap => {
+            this.setState({
+                options: snap.val()
+            })
+        })
     }
 
     logout() {
@@ -32,16 +43,16 @@ class Home extends Component {
                     </span>
                     <span className="logout" onClick={this.logout}>
                         <span className="logout-icon"></span>
-                        Logout
+                        Logout {this.state.options}
                     </span>
                 </header>
                 <CartLine>
                     {ConstData.map((obj, i) => {
                         return (<Card key={i} canUseModal={true}>
                             <div>
-                                <h1>{obj.title}</h1>
-                                <h4>{obj.description}</h4>
-                                <ul>
+                                <h1 className="modalTitle">{obj.title}</h1>
+                                <p className="modalDescription">{obj.description}</p>
+                                <ul className="modalList">
                                     {obj.options.map((option, i) => {
                                         return (
                                             <li key={i}>{option.title}</li>
@@ -52,10 +63,7 @@ class Home extends Component {
                         </Card>) 
                     })}
                 </CartLine>
-                <BoardContainer>
-                    <Board />
-                    <TextEditor />
-                </BoardContainer>
+                <MainBoard />
             </div>
         )
     }
